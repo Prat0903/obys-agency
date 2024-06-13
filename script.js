@@ -20,7 +20,7 @@ function loaderAnimation() {
                 } else {
                     h5Timer.innerHTML = grow;
                 }
-            }, 28)
+            }, 25)
         }
     });
 
@@ -32,7 +32,7 @@ function loaderAnimation() {
     tl.to('#loader', {
         opacity: 0,
         duration: 0.3,
-        delay: 1,
+        delay: 3,
         display: 'none'
     });
 

@@ -125,6 +125,8 @@ body {
   height: 100vh;
   width: 100%;
   background-color: #151515;
+  position: relative;
+  z-index: 100;
 }
 
 #page1 #nav {
@@ -172,7 +174,7 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
-  position: relative;
+  /* position: relative; */
 }
 
 .hero:nth-child(2) {
@@ -185,6 +187,16 @@ body {
   text-transform: uppercase;
   line-height: 1.05;
   letter-spacing: 0.5vh;
+  position: relative;
+}
+
+#hero1::before {
+  content: "01";
+  position: absolute;
+  left: 20%;
+  top: 35%;
+  font-family: "silk serif";
+  font-size: 3.2vw;
 }
 
 .hero h2 {
@@ -250,9 +262,9 @@ body {
   width: 10vw;
   background-color: #ffa63d;
   border-radius: 50%;
-  position: relative;
-  top: -100%;
-  left: 70%;
+  position: absolute;
+  top: 12%;
+  left: 78%;
   z-index: 998;
   display: flex;
   align-content: center;
@@ -278,7 +290,7 @@ body {
 #page4 {
   min-height: 100vh;
   width: 100%;
-  /* background-color: rgb(82, 79, 79); */
+  background-color: #151515;
   position: relative;
   padding: 10vh 0;
 }
@@ -293,6 +305,17 @@ body {
 #page4-content h1 {
   font-size: 7vw;
   text-transform: uppercase;
+  position: relative;
+}
+
+#page4-content h1::before {
+  content: "03";
+  position: absolute;
+  top: 7%;
+  left: -13%;
+  font-size: 3.2vw;
+  font-weight: 400;
+  font-family: "silk serif";
 }
 
 #page4-content .underline {
@@ -364,7 +387,149 @@ body {
   margin-top: -4.5%;
 }
 
+#page4-content h5 {
+  font-size: 0.95vw;
+  font-weight: 500;
+  margin-top: -4.5%;
+}
+
 #page5 {
   min-height: 100vh;
   width: 100%;
+  position: relative;
+  background-color: #151515;
+}
+
+.elem {
+  white-space: nowrap;
+  /* overflow-x: auto; */
+  margin-bottom: -2.5vw;
+}
+
+.elem h1 {
+  /* background-color: red; */
+  font-size: 7vw;
+  -webkit-text-stroke: 1px #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: transparent;
+  display: inline-block;
+  margin-right: 16px;
+  animation-name: elemText;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes elemText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+.elem2 {
+  white-space: nowrap;
+  margin-bottom: -2.5vw;
+}
+
+.elem2 h1 {
+  font-size: 7vw;
+  -webkit-text-stroke: 1px #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: transparent;
+  display: inline-block;
+  margin-right: 16px;
+  transform: translateX(calc(-100% - 20px));
+  animation-name: elemText;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.elem span,
+.elem2 span {
+  font-family: "silk serif";
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  /* margin-left: 20px; */
+  margin-bottom: 0.5vw;
+}
+
+#footer {
+  height: 141vh;
+  width: 100%;
+  background-color: #151515;
+  position: relative;
+  padding-left: 25vw;
+}
+
+#footer h1 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+}
+
+#footer h1::before {
+  content: "04";
+  position: absolute;
+  top: 7%;
+  left: -13%;
+  font-size: 3.2vw;
+  font-weight: 400;
+  font-family: "silk serif";
+}
+
+#footer svg {
+  width: 6vw;
+  margin-left: 1vw;
+}
+
+.underline {
+  height: 1.8px;
+  width: 90%;
+  background-color: #ffffffad;
+  margin: 4vw 0 3vw 0;
+}
+
+#footer-div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 3vw 15vw 3vw 0;
+  /* background-color: red; */
+}
+
+#footer-div h6 {
+  font-size: 1vw;
+  margin-bottom: 1.6vw;
+  font-weight: 600;
+}
+
+#footer-div h5 {
+  font-size: 1.5vw;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+#footer-div .mail {
+  text-decoration: underline;
+}
+
+.box {
+  width: 22.8%;
+  padding: 0.5vh 0.8vh;
+  /* background-color: blue; */
+}
+
+#footer > h5 {
+  font-size: 1.05vw;
+  font-weight: 500;
+  word-spacing: -0.1vh;
+  margin-top: -1vw;
 }
