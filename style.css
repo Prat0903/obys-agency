@@ -16,15 +16,11 @@ body {
   overflow-x: hidden;
 }
 
-#cursor {
-  width: 2.5vw;
-  height: 2.5vw;
-  border-radius: 50%;
-  border: 1px solid #ffffffa8;
-  position: fixed;
-  z-index: 997;
+.mousefollower {
+  border: 2px solid #fff;
+  background-color: rgb(255, 255, 255);
+  scale: 2;
   mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
 }
 
 #loader {
@@ -118,7 +114,7 @@ body {
 
 #main {
   position: relative;
-  background-color: #030303;
+  background-color: #151515;
 }
 
 #page1 {
@@ -178,7 +174,7 @@ body {
 }
 
 .hero:nth-child(2) {
-  margin-top: 18vh;
+  margin-top: 17vh;
 }
 
 .hero h1 {
@@ -194,7 +190,7 @@ body {
   content: "01";
   position: absolute;
   left: 20%;
-  top: 35%;
+  top: 34%;
   font-family: "silk serif";
   font-size: 3.2vw;
 }
@@ -239,22 +235,18 @@ body {
   width: 71vw;
   position: relative;
   left: 29%;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* background-color: red; */
-}
-
-#video-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-  top: 0;
+  background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 #video-container video {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  opacity: 0;
 }
 
 #video-cursor {
@@ -263,8 +255,8 @@ body {
   background-color: #ffa63d;
   border-radius: 50%;
   position: absolute;
-  top: 12%;
-  left: 78%;
+  top: -15%;
+  left: 55%;
   z-index: 998;
   display: flex;
   align-content: center;
@@ -283,8 +275,150 @@ body {
 #page3 {
   min-height: 100vh;
   width: 100%;
-  background-color: rgb(82, 79, 79);
+  background-color: #151515;
   position: relative;
+  padding: 13vh 2vw;
+  margin-top: 15vh;
+}
+
+#page3 h1 {
+  font-size: 7.5vw;
+  text-transform: uppercase;
+  position: relative;
+  left: 28vw;
+}
+
+#page3 h1::before {
+  content: "02";
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  font-size: 3.2vw;
+  font-weight: 400;
+  font-family: "silk serif";
+}
+
+#page3 .underline {
+  height: 0.25vh;
+  width: 65%;
+  background-color: #fff;
+  margin: 5vw 0;
+  margin-left: 28%;
+}
+
+#image-div-container {
+  /* background-color: red; */
+  padding: 1vw;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20vh;
+}
+
+.image-div {
+  flex-shrink: 0;
+  height: 39vw;
+  width: 27vw;
+  background-color: blue;
+  position: relative;
+  overflow: hidden;
+  margin: 1.5vw;
+}
+
+.image-div:nth-child(1) {
+  height: 29vw;
+  width: 20vw;
+}
+
+.image-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page3-circle1 {
+  height: 23vw;
+  width: 23vw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32vh;
+  margin-left: 10vw;
+  position: relative;
+}
+
+.page3-circle1 svg {
+  height: 40%;
+}
+
+.page3-circle2 {
+  height: 23vw;
+  width: 23vw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 40vh; */
+  /* margin-left: 10vw; */
+  position: relative;
+}
+
+.page3-circle2 svg {
+  height: 40%;
+  rotate: -45deg;
+}
+
+.circle-in {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  /* color: #000; */
+  scale: 0;
+  border-radius: 50%;
+  transition: all ease 0.3s;
+}
+
+.circle-in p {
+  font-size: 0.95vw;
+  font-weight: 600;
+  color: #000;
+  width: 80%;
+  padding: 0.5vh 0.3vh;
+  text-align: center;
+  scale: 0;
+  transition: all ease 0.3s;
+  transition-delay: 0.4s;
+  opacity: 0;
+}
+
+.page3-circle1:hover .circle-in {
+  scale: 1;
+}
+
+.page3-circle1:hover p {
+  scale: 1;
+  opacity: 0.85;
+}
+
+.page3-circle2:hover .circle-in {
+  scale: 1;
+}
+
+.page3-circle2:hover p {
+  scale: 1;
+  opacity: 0.85;
 }
 
 #page4 {
@@ -293,6 +427,7 @@ body {
   background-color: #151515;
   position: relative;
   padding: 10vh 0;
+  margin-top: 15vh;
 }
 
 #page4-content {
@@ -390,7 +525,7 @@ body {
 #page4-content h5 {
   font-size: 0.95vw;
   font-weight: 500;
-  margin-top: -4.5%;
+  margin-top: -4%;
 }
 
 #page5 {
@@ -461,7 +596,7 @@ body {
 }
 
 #footer {
-  height: 141vh;
+  height: 102vh;
   width: 100%;
   background-color: #151515;
   position: relative;
@@ -532,4 +667,9 @@ body {
   font-weight: 500;
   word-spacing: -0.1vh;
   margin-top: -1vw;
+}
+
+._canvas_container {
+  z-index: 999999 !important;
+  pointer-events: none;
 }
