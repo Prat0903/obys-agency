@@ -34,8 +34,9 @@ function loaderAnimation() {
 
     var tl = gsap.timeline();
 
-    tl.from('.line h1', {
+    tl.from('.line h1, .timer-text', {
         y: 120,
+        opacity: 0,
         stagger: 0.25,
         duration: 0.4,
         delay: 0.5,
@@ -65,7 +66,7 @@ function loaderAnimation() {
     tl.to('#loader', {
         opacity: 0,
         duration: 0.3,
-        delay: 0,
+        delay: 2.9,
         display: 'none'
     });
 
@@ -152,7 +153,7 @@ function cursorAnimation() {
 
 }
 
-function sheryAnimation() {
+function imageAnimation() {
     Shery.imageEffect('.image-div', {
         style: 5,
         config: { "a": { "value": 2, "range": [0, 30] }, "b": { "value": 0.75, "range": [-1, 1] }, "zindex": { "value": -9996999, "range": [-9999999, 9999999] }, "aspect": { "value": 0.799994569354803 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": true }, "infiniteGooey": { "value": false }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1.18, "range": [1, 5] }, "scrollType": { "value": 0 }, "geoVertex": { "range": [1, 64], "value": 1 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 0 }, "noise_speed": { "value": 0.38, "range": [0, 10] }, "metaball": { "value": 0.4, "range": [0, 2] }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0, "range": [0, 0.1] }, "noise_height": { "value": 0.43, "range": [0, 2] }, "noise_scale": { "value": 7.63, "range": [0, 100] } },
@@ -160,8 +161,71 @@ function sheryAnimation() {
     })
 }
 
+function flagAnimation() {
+    document.addEventListener('mousemove', function (dets) {
+        gsap.to('#flag', {
+            x: dets.x,
+            y: dets.y,
+        });
+    });
+
+    var hero3 = document.querySelector('#hero3');
+
+    hero3.addEventListener('mouseenter', function () {
+        gsap.to('#flag', {
+            opacity: 1,
+        });
+    });
+
+    hero3.addEventListener('mouseleave', function () {
+        gsap.to('#flag', {
+            opacity: 0,
+        });
+    });
+}
+
+function footerAnimation() {
+
+    var clutter = ""
+    var clutter2 = ""
+    document.querySelector("#footer h1").textContent.split("").forEach(function (elem) {
+        clutter += `<span>${elem}</span>`
+    })
+    document.querySelector("#footer h1").innerHTML = clutter
+    document.querySelector("#footer h2").textContent.split("").forEach(function (elem) {
+        clutter2 += `<span>${elem}</span>`
+    })
+    document.querySelector("#footer h2").innerHTML = clutter2
+
+
+    document.querySelector("#footer-text").addEventListener("mouseenter", function () {
+        gsap.to("#footer h1 span", {
+            opacity: 0,
+            stagger: 0.05,
+        })
+        gsap.to("#footer h2 span", {
+            delay: 0.2,
+            opacity: 1,
+            stagger: 0.1,
+        })
+    })
+    document.querySelector("#footer-text").addEventListener("mouseleave", function () {
+        gsap.to("#footer h1 span", {
+            opacity: 1,
+            stagger: 0.1,
+            delay: 0.2,
+
+        })
+        gsap.to("#footer h2 span", {
+            opacity: 0,
+            stagger: 0.05
+        })
+    })
+}
+
 locoScroll();
 loaderAnimation();
 cursorAnimation();
-sheryAnimation();
-
+imageAnimation();
+flagAnimation();
+footerAnimation();

@@ -33,6 +33,15 @@ body {
   /* overflow-y: hidden; */
 }
 
+#loader .timer-text {
+  font-size: 1vw;
+  font-weight: 500;
+  /* background-color: red; */
+  width: 8%;
+  margin-top: 4.2vw;
+  margin-left: 15vw;
+}
+
 .line {
   /* background-color: red; */
   height: fit-content;
@@ -74,7 +83,7 @@ body {
   font-weight: 800;
   opacity: 0;
   text-transform: uppercase;
-  animation-duration: 1.8s;
+  animation-duration: 1.4s;
   animation-iteration-count: infinite;
 }
 
@@ -610,11 +619,38 @@ body {
   position: relative;
 }
 
+#footer-text {
+  position: relative;
+  /* width: 85%; */
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+  margin-left: 1.5vw;
+}
+
+#footer-text h2 {
+  font-size: 7.2vw;
+  text-transform: uppercase;
+  position: absolute;
+  top: -10%;
+  font-weight: 500;
+  left: 0;
+  font-family: "silk serif";
+}
+
+#footer-text h2 span {
+  font-family: "silk serif";
+  opacity: 0;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+}
+
 #footer h1::before {
   content: "04";
   position: absolute;
   top: 7%;
-  left: -13%;
+  left: -20%;
   font-size: 3.2vw;
   font-weight: 400;
   font-family: "silk serif";
@@ -623,6 +659,7 @@ body {
 #footer svg {
   width: 6vw;
   margin-left: 1vw;
+  /* display: none; */
 }
 
 .underline {
@@ -672,4 +709,148 @@ body {
 ._canvas_container {
   z-index: 999999 !important;
   pointer-events: none;
+}
+
+#flag {
+  height: 30vw;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+#hero2 {
+  position: relative;
+  z-index: 99;
+}
+
+#hero3 {
+  position: relative;
+  /* background-color: red; */
+  z-index: 99;
+}
+
+#hero4 {
+  position: relative;
+  z-index: 99;
+}
+
+@media (max-width: 600px) {
+  #page1 {
+    height: 60vh;
+    width: 100%;
+    background-color: #151515;
+    position: relative;
+    z-index: 100;
+    padding: 1px;
+  }
+
+  #page1 #nav {
+    padding: 3vw 5vw;
+    position: fixed;
+    top: 0;
+  }
+
+  #page1 #svg-container {
+    /* background-color: red; */
+    margin-top: 3vw;
+    display: flex;
+    gap: 65vw;
+  }
+
+  #svg-container svg {
+    scale: 0.85;
+  }
+
+  #nav h3 {
+    display: none;
+  }
+
+  #nav-part2 h4 {
+    display: none;
+  }
+
+  .hero {
+    /* background-color: red; */
+    width: 70%;
+    margin-left: 6%;
+    height: fit-content;
+    overflow: hidden;
+  }
+
+  .hero:nth-child(2) {
+    margin-top: 23.5vh;
+  }
+
+  .hero h1 {
+    font-size: 10vw;
+    line-height: 1;
+    letter-spacing: -0.2vh;
+    position: relative;
+  }
+
+  #hero1::before {
+    content: "01";
+    position: absolute;
+    left: 6%;
+    top: 30%;
+    font-size: 5vw;
+  }
+
+  .hero h2 {
+    font-size: 10vw;
+    line-height: 1;
+    letter-spacing: -0.2vh;
+  }
+
+  #page2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #151515;
+    padding-top: 20vh;
+    position: relative;
+  }
+  
+  #video-container {
+    height: 70vh;
+    width: 71vw;
+    position: relative;
+    left: 29%;
+    /* overflow: hidden; */
+    /* background-color: red; */
+    background-image: url("https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+  
+  #video-cursor {
+    height: 10vw;
+    width: 10vw;
+    background-color: #ffa63d;
+    border-radius: 50%;
+    position: absolute;
+    top: -15%;
+    left: 55%;
+    z-index: 998;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  #video-cursor i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5vw;
+    font-weight: 600;
+  }
 }
