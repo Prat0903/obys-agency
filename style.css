@@ -924,6 +924,8 @@ body {
     z-index: 999999;
     background-color: #030303;
     padding: 30vh 10vw;
+    overflow: hidden;
+    overflow-y: hidden;
   }
 
   #loader .timer-text {
@@ -1390,7 +1392,7 @@ body {
   }
 
   #footer {
-    height: 110vh;
+    height: 105vh;
     width: 100%;
     background-color: #151515;
     position: relative;
@@ -1484,6 +1486,7 @@ body {
     font-size: 4.5vw;
     font-weight: 500;
     word-spacing: -0.1vh;
-    margin-top: -1vw;
+    /* margin-top: -1vw; */
+    /* background-color: red; */
   }
 }
